@@ -1,0 +1,883 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@model FieldNotesViewModel
+
+    <header class="masthead" style="background-image: url('https://cdn.vietnambiz.vn/171464876016439296/2020/4/22/demographic-survey-1024x546-15875521749521145778897.jpg') ">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-md-10 mx-auto">
+                    <div class="site-heading">
+                        <h1>Edit Osteology Data</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+<h1>Edit Information</h1>
+
+<div class="container">
+    <div class="row p-3">
+        <div class="col">
+            <a href="#location">Location Measurement</a>
+        </div>
+        <div class="col">
+            <a href="#osteology">Osteology Report</a>
+        </div>
+        <div class="col">
+            <a href="#skull">Osteology Skull Report</a>
+        </div>
+        <div class="col">
+            <a href="#demographic">Demographic</a>
+        </div>
+        <div class="col">
+            <a href="#artifact">Artifact Bio Notes</a>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <form asp-action="Edit" method="post">
+
+
+
+        <!--LOCATION FORM-->
+        <h3 id="location">Location Measurement</h3>
+        @if (Model.LocationMeasurement != null)
+        {
+            <input asp-for="LocationMeasurement.CreatedBy" hidden value="@Model.LocationMeasurement.CreatedBy" />
+
+            <div class="form-group">
+                <label asp-for="LocationMeasurement.Nors">NORS</label>
+                <select class="form-control" asp-for="LocationMeasurement.Nors" value="@Model.LocationMeasurement.Nors">
+                    <option value="">--Select One--</option>
+                    <option value="N">North</option>
+                    <option value="S">South</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="LocationMeasurement.LowNs">Low North or South Number</label>
+                <select class="form-control" asp-for="LocationMeasurement.LowNs" value="@Model.LocationMeasurement.LowNs">
+                    <option value="">--Select One--</option>
+                    <option value=0>0</option>
+                    <option value=10>10</option>
+                    <option value=20>20</option>
+                    <option value=30>30</option>
+                    <option value=40>40</option>
+                    <option value=50>50</option>
+                    <option value=60>60</option>
+                    <option value=70>70</option>
+                    <option value=80>80</option>
+                    <option value=90>90</option>
+                    <option value=100>100</option>
+                    <option value=110>110</option>
+                    <option value=120>120</option>
+                    <option value=130>130</option>
+                    <option value=140>140</option>
+                    <option value=150>150</option>
+                    <option value=160>160</option>
+                    <option value=170>170</option>
+                    <option value=180>180</option>
+                    <option value=190>190</option>
+                    <option value=200>200</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="LocationMeasurement.Eorw">EORW</label>
+                <select class="form-control" asp-for="LocationMeasurement.Eorw" value="@Model.LocationMeasurement.Eorw">
+                    <option value="">--Select One--</option>
+                    <option value="E">East</option>
+                    <option value="W">West</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="LocationMeasurement.LowEw">Low East or West Number</label>
+                <select class="form-control" asp-for="LocationMeasurement.LowEw" value="@Model.LocationMeasurement.LowEw">
+                    <option value="">--Select One--</option>
+                    <option value=0>0</option>
+                    <option value=10>10</option>
+                    <option value=20>20</option>
+                    <option value=30>30</option>
+                    <option value=40>40</option>
+                    <option value=50>50</option>
+                    <option value=60>60</option>
+                    <option value=70>70</option>
+                    <option value=80>80</option>
+                    <option value=90>90</option>
+                    <option value=100>100</option>
+                    <option value=110>110</option>
+                    <option value=120>120</option>
+                    <option value=130>130</option>
+                    <option value=140>140</option>
+                    <option value=150>150</option>
+                    <option value=160>160</option>
+                    <option value=170>170</option>
+                    <option value=180>180</option>
+                    <option value=200>200</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="LocationMeasurement.Square">Square</label>
+                <select class="form-control" asp-for="LocationMeasurement.Square" value="@Model.LocationMeasurement.Square">
+                    <option value="NE">NE</option>
+                    <option value="NW">NW</option>
+                    <option value="SE">SE</option>
+                    <option value="SW">SW</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="LocationMeasurement.BurialNum">Burial Number</label>
+                <input class="form-control" asp-for="LocationMeasurement.BurialNum" value="@Model.LocationMeasurement.BurialNum" />
+            </div>
+
+            <div class="form-group">
+                <label asp-for="LocationMeasurement.Direction">Direction</label>
+                <select class="form-control" asp-for="LocationMeasurement.Direction" value="@Model.LocationMeasurement.Direction">
+                    <option value="">--Select One--</option>
+                    <option value="E">East</option>
+                    <option value="W">West</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="LocationMeasurement.Depth">Depth</label>
+                <input class="form-control" asp-for="LocationMeasurement.Depth" value="@Model.LocationMeasurement.Depth" />
+            </div>
+            <div class="form-group">
+                <label asp-for="LocationMeasurement.HeadSouth">HeadSouth</label>
+                <input class="form-control" asp-for="LocationMeasurement.HeadSouth" value="@Model.LocationMeasurement.HeadSouth" />
+            </div>
+            <div class="form-group">
+                <label asp-for="LocationMeasurement.FeetSouth">FeetSouth</label>
+                <input class="form-control" asp-for="LocationMeasurement.FeetSouth" value="@Model.LocationMeasurement.FeetSouth" />
+            </div>
+            <div class="form-group">
+                <label asp-for="LocationMeasurement.HeadWest">HeadWest</label>
+                <input class="form-control" asp-for="LocationMeasurement.HeadWest" value="@Model.LocationMeasurement.HeadWest" />
+            </div>
+            <div class="form-group">
+                <label asp-for="LocationMeasurement.FeetWest">FeetWest</label>
+                <input class="form-control" asp-for="LocationMeasurement.FeetWest" value="@Model.LocationMeasurement.FeetWest" />
+            </div>
+            <div class="form-group">
+                <label asp-for="LocationMeasurement.BurialLength">BurialLength</label>
+                <input class="form-control" asp-for="LocationMeasurement.BurialLength" value="@Model.LocationMeasurement.BurialLength" />
+            </div>
+            <div class="form-group">
+                <label asp-for="LocationMeasurement.DiscoveryDay">DiscoveryDay</label>
+                <input class="form-control" asp-for="LocationMeasurement.DiscoveryDay" value="@Model.LocationMeasurement.DiscoveryDay" />
+            </div>
+            <div class="form-group">
+                <label asp-for="LocationMeasurement.DiscoveryMonth">DiscoveryMonth</label>
+                <input class="form-control" asp-for="LocationMeasurement.DiscoveryMonth" value="@Model.LocationMeasurement.DiscoveryMonth" />
+            </div>
+            <div class="form-group">
+                <label asp-for="LocationMeasurement.DiscoveryYear">DiscoveryYear</label>
+                <input class="form-control" asp-for="LocationMeasurement.DiscoveryYear" value="@Model.LocationMeasurement.DiscoveryYear" />
+            </div>
+            <div class="form-group">
+                <label asp-for="LocationMeasurement.Cluster">Cluster</label>
+                <input class="form-control" asp-for="LocationMeasurement.Cluster" value="@Model.LocationMeasurement.Cluster" />
+            </div>
+            <div class="form-group">
+                <label asp-for="LocationMeasurement.BurialRack">BurialRack</label>
+                <input class="form-control" asp-for="LocationMeasurement.BurialRack" value="@Model.LocationMeasurement.BurialRack" />
+            </div>
+        }
+        else
+        {
+            @*if it's blank then the user who creates this form will be the creator *@
+            @*this is the first time it is being created last modified and created are the same person*@
+            <input asp-for="LocationMeasurement.LastModifiedBy" hidden value="@User.Identity.Name" />
+            @*keep the created information the same*@
+            <input asp-for="LocationMeasurement.CreatedBy" hidden value="@User.Identity.Name" />
+            @*if it's blank then the user who creates this form will be the creator *@
+            <input asp-for="LocationMeasurement.CreatedBy" hidden value="@User.Identity.Name" />
+
+
+            <div class="form-group">
+                <label asp-for="LocationMeasurement.Nors">NORS</label>
+                <select class="form-control" asp-for="LocationMeasurement.Nors">
+                    <option value="">--Select One--</option>
+                    <option value="N">North</option>
+                    <option value="S">South</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="LocationMeasurement.LowNs">Low North or South Number</label>
+                <select class="form-control" asp-for="LocationMeasurement.LowNs">
+                    <option value="">--Select One--</option>
+                    <option value=0>0</option>
+                    <option value=10>10</option>
+                    <option value=20>20</option>
+                    <option value=30>30</option>
+                    <option value=40>40</option>
+                    <option value=50>50</option>
+                    <option value=60>60</option>
+                    <option value=70>70</option>
+                    <option value=80>80</option>
+                    <option value=90>90</option>
+                    <option value=100>100</option>
+                    <option value=110>110</option>
+                    <option value=120>120</option>
+                    <option value=130>130</option>
+                    <option value=140>140</option>
+                    <option value=150>150</option>
+                    <option value=160>160</option>
+                    <option value=170>170</option>
+                    <option value=180>180</option>
+                    <option value=190>190</option>
+                    <option value=200>200</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="LocationMeasurement.Eorw">EORW</label>
+                <select class="form-control" asp-for="LocationMeasurement.Eorw">
+                    <option value="">--Select One--</option>
+                    <option value="E">East</option>
+                    <option value="W">West</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="LocationMeasurement.LowEw">Low East or West Number</label>
+                <select class="form-control" asp-for="LocationMeasurement.LowEw">
+                    <option value="">--Select One--</option>
+                    <option value=0>0</option>
+                    <option value=10>10</option>
+                    <option value=20>20</option>
+                    <option value=30>30</option>
+                    <option value=40>40</option>
+                    <option value=50>50</option>
+                    <option value=60>60</option>
+                    <option value=70>70</option>
+                    <option value=80>80</option>
+                    <option value=90>90</option>
+                    <option value=100>100</option>
+                    <option value=110>110</option>
+                    <option value=120>120</option>
+                    <option value=130>130</option>
+                    <option value=140>140</option>
+                    <option value=150>150</option>
+                    <option value=160>160</option>
+                    <option value=170>170</option>
+                    <option value=180>180</option>
+                    <option value=200>200</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="LocationMeasurement.Square">Square</label>
+                <select class="form-control" asp-for="LocationMeasurement.Square">
+                    <option value="NE">NE</option>
+                    <option value="NW">NW</option>
+                    <option value="SE">SE</option>
+                    <option value="SW">SW</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="LocationMeasurement.BurialNum">Burial Number</label>
+                <input class="form-control" asp-for="LocationMeasurement.BurialNum" />
+            </div>
+
+            <div class="form-group">
+                <label asp-for="LocationMeasurement.Direction">Direction</label>
+                <select class="form-control" asp-for="LocationMeasurement.Direction">
+                    <option value="">--Select One--</option>
+                    <option value="E">East</option>
+                    <option value="W">West</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="LocationMeasurement.Depth">Depth</label>
+                <input class="form-control" asp-for="LocationMeasurement.Depth" />
+            </div>
+            <div class="form-group">
+                <label asp-for="LocationMeasurement.HeadSouth">HeadSouth</label>
+                <input class="form-control" asp-for="LocationMeasurement.HeadSouth" />
+            </div>
+            <div class="form-group">
+                <label asp-for="LocationMeasurement.FeetSouth">FeetSouth</label>
+                <input class="form-control" asp-for="LocationMeasurement.FeetSouth" />
+            </div>
+            <div class="form-group">
+                <label asp-for="LocationMeasurement.HeadWest">HeadWest</label>
+                <input class="form-control" asp-for="LocationMeasurement.HeadWest" />
+            </div>
+            <div class="form-group">
+                <label asp-for="LocationMeasurement.FeetWest">FeetWest</label>
+                <input class="form-control" asp-for="LocationMeasurement.FeetWest" />
+            </div>
+            <div class="form-group">
+                <label asp-for="LocationMeasurement.BurialLength">BurialLength</label>
+                <input class="form-control" asp-for="LocationMeasurement.BurialLength" />
+            </div>
+            <div class="form-group">
+                <label asp-for="LocationMeasurement.DiscoveryDay">DiscoveryDay</label>
+                <input class="form-control" asp-for="LocationMeasurement.DiscoveryDay" />
+            </div>
+            <div class="form-group">
+                <label asp-for="LocationMeasurement.DiscoveryMonth">DiscoveryMonth</label>
+                <input class="form-control" asp-for="LocationMeasurement.DiscoveryMonth" />
+            </div>
+            <div class="form-group">
+                <label asp-for="LocationMeasurement.DiscoveryYear">DiscoveryYear</label>
+                <input class="form-control" asp-for="LocationMeasurement.DiscoveryYear" />
+            </div>
+            <div class="form-group">
+                <label asp-for="LocationMeasurement.Cluster">Cluster</label>
+                <input class="form-control" asp-for="LocationMeasurement.Cluster" />
+            </div>
+            <div class="form-group">
+                <label asp-for="LocationMeasurement.BurialRack">BurialRack</label>
+                <input class="form-control" asp-for="LocationMeasurement.BurialRack" />
+            </div>
+
+        }
+
+        <!--OSTEOLOGY FORM-->
+        <h3 id="osteology">Osteology Report</h3>
+        @if (Model.Osteology != null)
+        {
+            <input asp-for="Identifier" hidden value="@Model.Identifier" />
+            <input asp-for="Osteology.CreatedBy" hidden value="@Model.Osteology.CreatedBy" />
+
+            <div class="form-group">
+                <label asp-for="Osteology.BasilarSuture">Basilar Suture</label>
+                <input class="form-control" asp-for="Osteology.BasilarSuture" value="@Model.Osteology.BasilarSuture" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Osteology.VentralArc">Ventral Arc</label>
+                <input class="form-control" asp-for="Osteology.VentralArc" value="@Model.Osteology.VentralArc" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Osteology.SubpubicAngle">Subpubic Angle</label>
+                <input class="form-control" asp-for="Osteology.SubpubicAngle" value="@Model.Osteology.SubpubicAngle" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Osteology.SciaticNotch">Sciatic Notch</label>
+                <input class="form-control" asp-for="Osteology.SciaticNotch" value="@Model.Osteology.SciaticNotch" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Osteology.ForemanMagnum">Foreman Magnum</label>
+                <input class="form-control" asp-for="Osteology.ForemanMagnum" value="@Model.Osteology.ForemanMagnum" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Osteology.BoneLength">Bone Length</label>
+                <input class="form-control" asp-for="Osteology.BoneLength" value="@Model.Osteology.BoneLength" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Osteology.Osteophytosis">Osteophytosis</label>
+                <input class="form-control" asp-for="Osteology.Osteophytosis" value="@Model.Osteology.Osteophytosis" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Osteology.ToothAttrition">Tooth Attrition</label>
+                <input class="form-control" asp-for="Osteology.ToothAttrition" value="@Model.Osteology.ToothAttrition" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Osteology.ToothEruption">Tooth Eruption</label>
+                <input class="form-control" asp-for="Osteology.ToothEruption" value="@Model.Osteology.ToothEruption" />
+            </div>
+        }
+        else
+        {
+            @*this is the first time it is being created last modified and created are the same person*@
+            <input asp-for="Osteology.LastModifiedBy" hidden value="@User.Identity.Name" />
+            @*keep the created information the same*@
+            <input asp-for="Osteology.CreatedBy" hidden value="@User.Identity.Name" />
+
+            <div class="form-group">
+                <label asp-for="Osteology.BasilarSuture">Basilar Suture</label>
+                <input class="form-control" asp-for="Osteology.BasilarSuture" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Osteology.VentralArc">Ventral Arc</label>
+                <input class="form-control" asp-for="Osteology.VentralArc" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Osteology.SubpubicAngle">Subpubic Angle</label>
+                <input class="form-control" asp-for="Osteology.SubpubicAngle" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Osteology.SciaticNotch">Sciatic Notch</label>
+                <input class="form-control" asp-for="Osteology.SciaticNotch" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Osteology.ForemanMagnum">Foreman Magnum</label>
+                <input class="form-control" asp-for="Osteology.ForemanMagnum" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Osteology.BoneLength">Bone Length</label>
+                <input class="form-control" asp-for="Osteology.BoneLength" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Osteology.Osteophytosis">Osteophytosis</label>
+                <input class="form-control" asp-for="Osteology.Osteophytosis" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Osteology.ToothAttrition">Tooth Attrition</label>
+                <input class="form-control" asp-for="Osteology.ToothAttrition" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Osteology.ToothEruption">Tooth Eruption</label>
+                <input class="form-control" asp-for="Osteology.ToothEruption" />
+            </div>
+
+        }
+
+        <!--FORM FOR OSTEOLOGY SKULL-->
+        <input asp-for="OsteologySkull.LastModifiedBy" hidden value="@User.Identity.Name" />
+
+        <h3 id="skull">Osteology Skull Report</h3>
+        @if (Model.OsteologySkull != null)
+        {
+            <input asp-for="Identifier" hidden value="@Model.Identifier" />
+            <input asp-for="OsteologySkull.CreatedBy" hidden value="@Model.OsteologySkull.CreatedBy" />
+
+            <div class="form-group">
+                <label asp-for="OsteologySkull.MaxCranialLength">Max Cranial Length</label>
+                <input class="form-control" asp-for="OsteologySkull.MaxCranialLength" value="@Model.OsteologySkull.MaxCranialLength" />
+            </div>
+            <div class="form-group">
+
+                <label asp-for="OsteologySkull.MaxCranialBreadth">Max Cranial Breadth</label>
+                <input class="form-control" asp-for="OsteologySkull.MaxCranialBreadth" value="@Model.OsteologySkull.MaxCranialBreadth" />
+            </div>
+            <div class="form-group">
+
+                <label asp-for="OsteologySkull.BasionBregmaHeight">Basion Bregma Height</label>
+                <input class="form-control" asp-for="OsteologySkull.BasionBregmaHeight" value="@Model.OsteologySkull.BasionBregmaHeight" />
+            </div>
+            <div class="form-group">
+
+                <label asp-for="OsteologySkull.BasionNasion">Basion Nasion</label>
+                <input class="form-control" asp-for="OsteologySkull.BasionNasion" value="@Model.OsteologySkull.BasionNasion" />
+            </div>
+            <div class="form-group">
+
+                <label asp-for="OsteologySkull.BasionProsthionLength">Basion Prosthion Length</label>
+                <input class="form-control" asp-for="OsteologySkull.BasionProsthionLength" value="@Model.OsteologySkull.BasionProsthionLength" />
+            </div>
+            <div class="form-group">
+
+                <label asp-for="OsteologySkull.NasionProsthion">Nasion Prosthion</label>
+                <input class="form-control" asp-for="OsteologySkull.NasionProsthion" value="@Model.OsteologySkull.NasionProsthion" />
+            </div>
+            <div class="form-group">
+
+                <label asp-for="OsteologySkull.MaxNasalBreadth">Max Nasal Breadth</label>
+                <input class="form-control" asp-for="OsteologySkull.MaxNasalBreadth" value="@Model.OsteologySkull.MaxNasalBreadth" />
+            </div>
+            <div class="form-group">
+
+                <label asp-for="OsteologySkull.InterorbitalBreadth">Interorbital Breadth</label>
+                <input class="form-control" asp-for="OsteologySkull.InterorbitalBreadth" value="@Model.OsteologySkull.InterorbitalBreadth" />
+            </div>
+            <div class="form-group">
+
+                <label asp-for="OsteologySkull.BizygomaticDiameter">Bizygomatic Diameter</label>
+                <input class="form-control" asp-for="OsteologySkull.BizygomaticDiameter" value="@Model.OsteologySkull.BizygomaticDiameter" />
+            </div>
+            <div class="form-group">
+
+                <label asp-for="OsteologySkull.CranialSuture">Cranial Suture</label>
+                <input class="form-control" asp-for="OsteologySkull.CranialSuture" value="@Model.OsteologySkull.CranialSuture" />
+            </div>
+            <div class="form-group">
+
+                <label asp-for="OsteologySkull.ZygomaticCrest">Zygomatic Crest</label>
+                <input class="form-control" asp-for="OsteologySkull.ZygomaticCrest" value="@Model.OsteologySkull.ZygomaticCrest" />
+            </div>
+            <div class="form-group">
+
+                <label asp-for="OsteologySkull.NuchalCrest">Nuchal Crest</label>
+                <input class="form-control" asp-for="OsteologySkull.NuchalCrest" value="@Model.OsteologySkull.NuchalCrest" />
+            </div>
+            <div class="form-group">
+
+                <label asp-for="OsteologySkull.Gonian">Gonian</label>
+                <input class="form-control" asp-for="OsteologySkull.Gonian" value="@Model.OsteologySkull.Gonian" />
+            </div>
+            <div class="form-group">
+
+                <label asp-for="OsteologySkull.ParietalBossing">Parietal Bossing</label>
+                <input class="form-control" asp-for="OsteologySkull.ParietalBossing" value="@Model.OsteologySkull.ParietalBossing" />
+            </div>
+            <div class="form-group">
+
+                <label asp-for="OsteologySkull.OrbitEdge">Orbit Edge</label>
+                <input class="form-control" asp-for="OsteologySkull.OrbitEdge" value="@Model.OsteologySkull.OrbitEdge" />
+            </div>
+            <div class="form-group">
+                <label asp-for="OsteologySkull.SupraorbitalRidges">Supraorbital Ridges</label>
+                <input class="form-control" asp-for="OsteologySkull.SupraorbitalRidges" value="@Model.OsteologySkull.SupraorbitalRidges" />
+            </div>
+            <div class="form-group">
+                <label asp-for="OsteologySkull.Robust">Robust</label>
+                <input class="form-control" asp-for="OsteologySkull.Robust" value="@Model.OsteologySkull.Robust" />
+            </div>
+            <div class="form-group">
+                <label asp-for="OsteologySkull.SkullTrauma">SkullTrauma</label>
+                <select class="form-control" asp-for="OsteologySkull.SkullTrauma" value="@Model.OsteologySkull.SkullTrauma">
+                    <option value="">--Select One--</option>
+
+                    <option value="Y">Yes</option>
+                    <option value="N">No</option>
+                </select>
+            </div>
+        }
+        else
+        {
+            @*this is the first time it is being created last modified and created are the same person*@
+            <input asp-for="OsteologySkull.LastModifiedBy" hidden value="@User.Identity.Name" />
+            @*keep the created information the same*@
+            <input asp-for="OsteologySkull.CreatedBy" hidden value="@User.Identity.Name" />
+
+            <div class="form-group">
+                <label asp-for="OsteologySkull.MaxCranialLength">Max Cranial Length</label>
+                <input class="form-control" asp-for="OsteologySkull.MaxCranialLength" />
+            </div>
+            <div class="form-group">
+
+                <label asp-for="OsteologySkull.MaxCranialBreadth">Max Cranial Breadth</label>
+                <input class="form-control" asp-for="OsteologySkull.MaxCranialBreadth" />
+            </div>
+            <div class="form-group">
+
+                <label asp-for="OsteologySkull.BasionBregmaHeight">Basion Bregma Height</label>
+                <input class="form-control" asp-for="OsteologySkull.BasionBregmaHeight" />
+            </div>
+            <div class="form-group">
+
+                <label asp-for="OsteologySkull.BasionNasion">Basion Nasion</label>
+                <input class="form-control" asp-for="OsteologySkull.BasionNasion" />
+            </div>
+            <div class="form-group">
+
+                <label asp-for="OsteologySkull.BasionProsthionLength">Basion Prosthion Length</label>
+                <input class="form-control" asp-for="OsteologySkull.BasionProsthionLength" />
+            </div>
+            <div class="form-group">
+
+                <label asp-for="OsteologySkull.NasionProsthion">Nasion Prosthion</label>
+                <input class="form-control" asp-for="OsteologySkull.NasionProsthion" />
+            </div>
+            <div class="form-group">
+
+                <label asp-for="OsteologySkull.MaxNasalBreadth">Max Nasal Breadth</label>
+                <input class="form-control" asp-for="OsteologySkull.MaxNasalBreadth" />
+            </div>
+            <div class="form-group">
+
+                <label asp-for="OsteologySkull.InterorbitalBreadth">Interorbital Breadth</label>
+                <input class="form-control" asp-for="OsteologySkull.InterorbitalBreadth" />
+            </div>
+            <div class="form-group">
+
+                <label asp-for="OsteologySkull.BizygomaticDiameter">Bizygomatic Diameter</label>
+                <input class="form-control" asp-for="OsteologySkull.BizygomaticDiameter" />
+            </div>
+            <div class="form-group">
+
+                <label asp-for="OsteologySkull.CranialSuture">Cranial Suture</label>
+                <input class="form-control" asp-for="OsteologySkull.CranialSuture" />
+            </div>
+            <div class="form-group">
+
+                <label asp-for="OsteologySkull.ZygomaticCrest">Zygomatic Crest</label>
+                <input class="form-control" asp-for="OsteologySkull.ZygomaticCrest" />
+            </div>
+            <div class="form-group">
+
+                <label asp-for="OsteologySkull.NuchalCrest">Nuchal Crest</label>
+                <input class="form-control" asp-for="OsteologySkull.NuchalCrest" />
+            </div>
+            <div class="form-group">
+
+                <label asp-for="OsteologySkull.Gonian">Gonian</label>
+                <input class="form-control" asp-for="OsteologySkull.Gonian" />
+            </div>
+            <div class="form-group">
+
+                <label asp-for="OsteologySkull.ParietalBossing">Parietal Bossing</label>
+                <input class="form-control" asp-for="OsteologySkull.ParietalBossing" />
+            </div>
+            <div class="form-group">
+
+                <label asp-for="OsteologySkull.OrbitEdge">Orbit Edge</label>
+                <input class="form-control" asp-for="OsteologySkull.OrbitEdge" />
+            </div>
+            <div class="form-group">
+                <label asp-for="OsteologySkull.SupraorbitalRidges">Supraorbital Ridges</label>
+                <input class="form-control" asp-for="OsteologySkull.SupraorbitalRidges" />
+            </div>
+            <div class="form-group">
+                <label asp-for="OsteologySkull.Robust">Robust</label>
+                <input class="form-control" asp-for="OsteologySkull.Robust" />
+            </div>
+            <div class="form-group">
+                <label asp-for="OsteologySkull.SkullTrauma">SkullTrauma</label>
+                <select class="form-control" asp-for="OsteologySkull.SkullTrauma">
+                    <option value="">--Select One--</option>
+
+                    <option value="Y">Yes</option>
+                    <option value="N">No</option>
+                </select>
+            </div>
+
+
+        }
+
+        <h3 id="demographic">Demographic</h3>
+        @if (Model.Demographic != null)
+        {
+            <input asp-for="Demographic.CreatedBy" hidden value="@Model.Demographic.CreatedBy" />
+            <input asp-for="Demographic.CreatedBy" hidden value="@Model.Demographic.CreatedBy" />
+            @*they are editing*@
+            <input asp-for="Identifier" hidden value="@Model.Identifier" />
+
+            <div class="form-group">
+                <label asp-for="Demographic.Sex">"Sex"</label>
+                <select class="form-control" asp-for="Demographic.Sex" value="@Model.Demographic.Sex">
+                    <option value="">--Select One--</option>
+                    <option value="M">Male</option>
+                    <option value="F">Female</option>
+                    <option value="C">Child (unknown)</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Demographic.SexGe">"Sex GE" </label>
+                <select class="form-control" asp-for="Demographic.SexGe" value="@Model.Demographic.SexGe">
+                    <option value="">--Select One--</option>
+                    <option value="M">Male</option>
+                    <option value="F">Female</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Demographic.HairColor">"Hair Color" </label>
+                <select class="form-control" asp-for="Demographic.HairColor" value="@Model.Demographic.HairColor">
+                    <option value="">--Select One--</option>
+                    <option value="B">Brown</option>
+                    <option value="R">Red</option>
+                    <option value="K">Black</option>
+                    <option value="D">Blonde</option>
+                    <option value="A">Red-Brown</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Demographic.AgeAtDeath">Age at Death (range)</label>
+                <input class="form-control" asp-for="Demographic.AgeAtDeath" readonly value="@Model.Demographic.AgeAtDeath" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Demographic.AgeAtDeathMin">"Estimated Min Age at Death" /</label>
+                <input class="form-control" asp-for="Demographic.AgeAtDeathMin" value="@Model.Demographic.AgeAtDeathMin" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Demographic.AgeAtDeathMax">"Estimated Max Age at Death" </label>
+                <input class="form-control" asp-for="Demographic.AgeAtDeathMax" value="@Model.Demographic.AgeAtDeathMax" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Demographic.AgeMethod">Age at Death Method</label>
+                <input class="form-control" asp-for="Demographic.AgeMethod" readonly value="@Model.Demographic.AgeMethod" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Demographic.Height">Height</label>
+                <input class="form-control" asp-for="Demographic.Height" value="@Model.Demographic.Height" />
+            </div>
+        }
+        else
+        {
+            @*if it's blank then the user who creates this form will be the creator *@
+            <input asp-for="Demographic.CreatedBy" hidden value="@User.Identity.Name" />
+
+            <div class="form-group">
+                <label asp-for="Demographic.Sex">"Sex"</label>
+                <select class="form-control" asp-for="Demographic.Sex">
+                    <option value="">--Select One--</option>
+                    <option value="M">Male</option>
+                    <option value="F">Female</option>
+                    <option value="C">Child (unknown)</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Demographic.SexGe">"Sex GE" </label>
+                <select class="form-control" asp-for="Demographic.SexGe">
+                    <option value="">--Select One--</option>
+                    <option value="M">Male</option>
+                    <option value="F">Female</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Demographic.HairColor">"Hair Color" </label>
+                <select class="form-control" asp-for="Demographic.HairColor">
+                    <option value="">--Select One--</option>
+                    <option value="B">Brown</option>
+                    <option value="R">Red</option>
+                    <option value="K">Black</option>
+                    <option value="D">Blonde</option>
+                    <option value="A">Red-Brown</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Demographic.AgeAtDeath">Age at Death (range)</label>
+                <input class="form-control" asp-for="Demographic.AgeAtDeath" readonly />
+            </div>
+            <div class="form-group">
+                <label asp-for="Demographic.AgeAtDeathMin">"Estimated Min Age at Death" /</label>
+                <input class="form-control" asp-for="Demographic.AgeAtDeathMin" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Demographic.AgeAtDeathMax">"Estimated Max Age at Death" </label>
+                <input class="form-control" asp-for="Demographic.AgeAtDeathMax" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Demographic.AgeMethod">Age at Death Method</label>
+                <input class="form-control" asp-for="Demographic.AgeMethod" readonly />
+            </div>
+            <div class="form-group">
+                <label asp-for="Demographic.Height">Height</label>
+                <input class="form-control" asp-for="Demographic.Height" />
+            </div>
+
+        }
+        <h3 id="artifact">Artifact Bio Note</h3>
+        @if (Model.ArtifactBioNote != null)
+        {
+            <input asp-for="ArtifactBioNote.CreatedBy" hidden value="@Model.ArtifactBioNote.CreatedBy" />
+            <input asp-for="ArtifactBioNote.Id" hidden value="@Model.ArtifactBioNote.Id" />
+
+            <div class="form-group">
+                <label asp-for="ArtifactBioNote.Rack">Rack</label>
+                <input class="form-control" type="text" asp-for="ArtifactBioNote.Rack" value="@Model.ArtifactBioNote.Rack" />
+            </div>
+            <div class="form-group">
+                <label asp-for="ArtifactBioNote.ArtifactFound">ArtifactFound</label>
+                <input class="form-control" type="text" asp-for="ArtifactBioNote.ArtifactFound" value="@Model.ArtifactBioNote.ArtifactFound" />
+            </div>
+            <div class="form-group">
+                <label asp-for="ArtifactBioNote.ArtifactDescription">LowNs</label>
+                <input class="form-control" type="text" asp-for="ArtifactBioNote.ArtifactDescription" value="@Model.ArtifactBioNote.ArtifactDescription" />
+            </div>
+            <div class="form-group">
+                <label asp-for="ArtifactBioNote.SampleTaken">SampleTaken</label>
+                <input class="form-control" type="text" asp-for="ArtifactBioNote.SampleTaken" value="@Model.ArtifactBioNote.SampleTaken" />
+            </div>
+            <div class="form-group">
+                <label asp-for="ArtifactBioNote.BioNotes">BioNotes</label>
+                <input class="form-control" type="text" asp-for="ArtifactBioNote.BioNotes" value="@Model.ArtifactBioNote.BioNotes" />
+            </div>
+            <div class="form-group">
+                <label asp-for="ArtifactBioNote.AdditionalNotes">AdditionalNotes</label>
+                <input class="form-control" type="text" asp-for="ArtifactBioNote.AdditionalNotes" value="@Model.ArtifactBioNote.AdditionalNotes" />
+            </div>
+            <div class="form-group">
+                <label asp-for="ArtifactBioNote.FaceBundle">FaceBundle</label>
+                <input class="form-control" type="text" asp-for="ArtifactBioNote.FaceBundle" value="@Model.ArtifactBioNote.FaceBundle" />
+            </div>
+            <div class="form-group">
+                <label asp-for="ArtifactBioNote.PathologyAnomalies">PathologyAnomalies</label>
+                <input class="form-control" type="text" asp-for="ArtifactBioNote.PathologyAnomalies" value="@Model.ArtifactBioNote.PathologyAnomalies" />
+            </div>
+            <div class="form-group">
+                <label asp-for="ArtifactBioNote.BurialWraping">Burial Wrapping</label>
+                <input class="form-control" type="text" asp-for="ArtifactBioNote.BurialWraping" value="@Model.ArtifactBioNote.BurialWraping" />
+            </div>
+            <div class="form-group">
+                <label asp-for="ArtifactBioNote.PreservationIndex">PreservationIndex</label>
+                <input class="form-control" type="text" asp-for="ArtifactBioNote.PreservationIndex" value="@Model.ArtifactBioNote.PreservationIndex" />
+            </div>
+        }
+        else
+        {
+            @*if it's blank then the user who creates this form will be the creator *@
+            <input asp-for="ArtifactBioNote.CreatedBy" hidden value="@User.Identity.Name" />
+
+            <div class="form-group">
+                <label asp-for="ArtifactBioNote.Rack">Rack</label>
+                <input class="form-control" type="text" asp-for="ArtifactBioNote.Rack" />
+            </div>
+            <div class="form-group">
+                <label asp-for="ArtifactBioNote.ArtifactFound">ArtifactFound</label>
+                <input class="form-control" type="text" asp-for="ArtifactBioNote.ArtifactFound" />
+            </div>
+            <div class="form-group">
+                <label asp-for="ArtifactBioNote.ArtifactDescription">LowNs</label>
+                <input class="form-control" type="text" asp-for="ArtifactBioNote.ArtifactDescription" />
+            </div>
+            <div class="form-group">
+                <label asp-for="ArtifactBioNote.SampleTaken">SampleTaken</label>
+                <input class="form-control" type="text" asp-for="ArtifactBioNote.SampleTaken" />
+            </div>
+            <div class="form-group">
+                <label asp-for="ArtifactBioNote.BioNotes">BioNotes</label>
+                <input class="form-control" type="text" asp-for="ArtifactBioNote.BioNotes" />
+            </div>
+            <div class="form-group">
+                <label asp-for="ArtifactBioNote.AdditionalNotes">AdditionalNotes</label>
+                <input class="form-control" type="text" asp-for="ArtifactBioNote.AdditionalNotes" />
+            </div>
+            <div class="form-group">
+                <label asp-for="ArtifactBioNote.FaceBundle">FaceBundle</label>
+                <input class="form-control" type="text" asp-for="ArtifactBioNote.FaceBundle" />
+            </div>
+            <div class="form-group">
+                <label asp-for="ArtifactBioNote.PathologyAnomalies">PathologyAnomalies</label>
+                <input class="form-control" type="text" asp-for="ArtifactBioNote.PathologyAnomalies" />
+            </div>
+            <div class="form-group">
+                <label asp-for="ArtifactBioNote.BurialWraping">Burial Wrapping</label>
+                <input class="form-control" type="text" asp-for="ArtifactBioNote.BurialWraping" />
+            </div>
+            <div class="form-group">
+                <label asp-for="ArtifactBioNote.PreservationIndex">PreservationIndex</label>
+                <input class="form-control" type="text" asp-for="ArtifactBioNote.PreservationIndex" />
+            </div>
+        }
+
+        <button type="submit">Update Information</button><br /> <br />
+        
+        @if (Model != null)
+        {
+            @*if the model is not blank, then we are dealing with an update request, and we need the ID to know what to update*@
+            <input asp-for="Identifier" hidden value="@Model.Identifier" />
+            @*change last edited to current user*@
+            <input asp-for="LocationMeasurement.LastModifiedBy" hidden value="@User.Identity.Name" />
+            <input asp-for="Osteology.LastModifiedBy" hidden value="@User.Identity.Name" />
+            <input asp-for="OsteologySkull.LastModifiedBy" hidden value="@User.Identity.Name" />
+            <input asp-for="Demographic.LastModifiedBy" hidden value="@User.Identity.Name" />
+            <input asp-for="ArtifactBioNote.LastModifiedBy" hidden value="@User.Identity.Name" />
+            @*keep the created information the same*@
+        }
+        else
+        {
+            @*this is the first time it is being created last modified and created are the same person*@
+            <input asp-for="LocationMeasurement.LastModifiedBy" hidden value="@User.Identity.Name" />
+            <input asp-for="Osteology.LastModifiedBy" hidden value="@User.Identity.Name" />
+            <input asp-for="OsteologySkull.LastModifiedBy" hidden value="@User.Identity.Name" />
+            <input asp-for="Demographic.LastModifiedBy" hidden value="@User.Identity.Name" />
+            <input asp-for="ArtifactBioNote.LastModifiedBy" hidden value="@User.Identity.Name" />
+            @*keep the created information the same*@
+            <input asp-for="LocationMeasurement.CreatedBy" hidden value="@User.Identity.Name" />
+            <input asp-for="Osteology.CreatedBy" hidden value="@User.Identity.Name" />
+            <input asp-for="OsteologySkull.CreatedBy" hidden value="@User.Identity.Name" />
+            <input asp-for="Demographic.CreatedBy" hidden value="@User.Identity.Name" />
+            <input asp-for="ArtifactBioNote.CreatedBy" hidden value="@User.Identity.Name" />
+
+            <button type="submit">Update Information</button><br /> <br />
+        }
+    </form>
+</div>

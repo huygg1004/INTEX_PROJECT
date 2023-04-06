@@ -1,0 +1,70 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{ ViewBag.Title = "View Burial Site For Public Users"; }
+
+@*@model IEnumerable<Intex_app.Models.LocationMeasurement>*@
+@model string
+
+<header class="masthead" style="background-image: url('https://christineelder.com/wp-content/uploads/2016/10/king-tut-adobe-1080x632.jpg') ">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-10 mx-auto">
+                <div class="site-heading">
+                    <h1>BYU Fag el-Gamous Burial Information</h1>
+                    <span class="subheading">View, Add and Edit Information</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+@*<div class="container">
+    <div class="row">
+        <div class="col-4">
+            <vc:location />
+        </div>
+
+        <div class="col-8">
+            <main role="main" class="pb-3">*@
+<div>
+    <div class="container">
+        @if (User.Identity.IsAuthenticated)
+        {
+            <div class="row">
+                <a class="btn btn-primary btn-lg" asp-action="Edit">Add a new record</a>
+            </div>
+            <br/>
+        }
+
+        <div class="row">
+            <script type='text/javascript' src='https://10ay.online.tableau.com/javascripts/api/viz_v1.js'></script>
+
+            <div class='tableauPlaceholder' style='width: 1000px; height: 800px;'>
+                <user id="@Model" />
+                <object class='tableauViz' width='1000' height='800' style='display:none;'>
+                    <user id="@Model" />
+                    <param name='host_url' value='https%3A%2F%2F10ay.online.tableau.com%2F' />
+                    <param name='embed_code_version' value='3' />
+                    <param name='site_root' value='&#47;t&#47;intex' />
+                    <param name='name' value='FagElGamous&#47;GridChart' />
+                    <param name='tabs' value='yes' />
+                    <param name='toolbar' value='yes' />
+                    <param name='showAppBanner' value='false' />
+                </object>
+            </div>
+        </div>
+
+
+
+
+
+
+
+    </div>
+</div>
+@*</main>
+            </div>
+        </div>
+    </div>*@
+

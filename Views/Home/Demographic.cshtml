@@ -1,0 +1,138 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model DemographicViewModel
+
+<header class="masthead">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-10 mx-auto">
+                <div class="site-heading">
+                    <h1>BYU Fag el-Gamous Excavation Site</h1>
+                    <span class="subheading">Intex Application</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div class="container">
+    <form asp-action="Demographic" method="post">
+
+
+        @if (Model.Demographic != null)
+        {
+            <input asp-for="Demographic.LastModifiedBy" hidden value="@User.Identity.Name" />
+            <input asp-for="Demographic.CreatedBy" hidden value="@Model.Demographic.CreatedBy" />
+
+            @*they are editing*@
+            <input asp-for="Identifier" hidden value="@Model.Identifier" />
+            <label asp-for="Demographic.Sex">"Sex"</label>
+
+            <select asp-for="Demographic.Sex" value="@Model.Demographic.Sex">
+                <option value="">--Select One--</option>
+                <option value="M">Male</option>
+                <option value="F">Female</option>
+                <option value="C">Child (unknown)</option>
+            </select>
+            <label asp-for="Demographic.SexGe">"Sex GE" </label>
+            <select asp-for="Demographic.SexGe" value="@Model.Demographic.SexGe">
+                <option value="">--Select One--</option>
+                <option value="M">Male</option>
+                <option value="F">Female</option>
+            </select>
+            <label asp-for="Demographic.HairColor">"Hair Color" </label>
+            <select asp-for="Demographic.HairColor" value="@Model.Demographic.HairColor">
+                <option value="">--Select One--</option>
+                <option value="B">Brown</option>
+                <option value="R">Red</option>
+                <option value="K">Black</option>
+                <option value="D">Blonde</option>
+                <option value="A">Red-Brown</option>
+            </select>
+
+            <label asp-for="Demographic.AgeAtDeath">Age at Death (range)</label>
+            <input asp-for="Demographic.AgeAtDeath" readonly value="@Model.Demographic.AgeAtDeath" />
+            <label asp-for="Demographic.AgeAtDeathMin">"Estimated Min Age at Death" /</label>
+            <input asp-for="Demographic.AgeAtDeathMin" value="@Model.Demographic.AgeAtDeathMin" />
+            <label asp-for="Demographic.AgeAtDeathMax">"Estimated Max Age at Death" </label>
+            <input asp-for="Demographic.AgeAtDeathMax" value="@Model.Demographic.AgeAtDeathMax" />
+            <label asp-for="Demographic.AgeMethod">Age at Death Method</label>
+            <input asp-for="Demographic.AgeMethod" readonly value="@Model.Demographic.AgeMethod" />
+            <label asp-for="Demographic.Height">Height</label>
+            <input asp-for="Demographic.Height" value="@Model.Demographic.Height" />
+
+
+            <button type="submit">Update Demographics</button><br /> <br />
+        }
+        else
+        {
+            @if (Model.Identifier != null)
+            {
+
+                @*this is the first time it is being created last modified and created are the same person*@
+                <input asp-for="Demographic.LastModifiedBy" hidden value="@User.Identity.Name" />
+                @*keep the created information the same*@
+                <input asp-for="Demographic.CreatedBy" hidden value="@User.Identity.Name" />
+                @*they are adding new, and have added location measurement already*@
+                <button type="submit">Add New Demographics</button><br /> <br />
+            }
+            else
+            {
+
+                @*this is the first time it is being created last modified and created are the same person*@
+                <input asp-for="Demographic.LastModifiedBy" hidden value="@User.Identity.Name" />
+                @*keep the created information the same*@
+                <input asp-for="Demographic.CreatedBy" hidden value="@User.Identity.Name" />
+
+                @*they are adding new*@
+                <label asp-for="Demographic.Id">Enter Id (eg. N100E100SW1)</label>
+                <input asp-for="Identifier" />
+            }
+
+            <label asp-for="Demographic.Sex">"Sex"</label>
+
+            <select asp-for="Demographic.Sex">
+                <option value="">--Select One--</option>
+                <option value="M">Male</option>
+                <option value="F">Female</option>
+                <option value="C">Child (unknown)</option>
+            </select>
+            <label asp-for="Demographic.SexGe">"Sex GE" </label>
+            <select asp-for="Demographic.SexGe" >
+                <option value="">--Select One--</option>
+                <option value="M">Male</option>
+                <option value="F">Female</option>
+            </select>
+            <label asp-for="Demographic.HairColor">"Hair Color" </label>
+            <select asp-for="Demographic.HairColor" >
+                <option value="">--Select One--</option>
+                <option value="B">Brown</option>
+                <option value="R">Red</option>
+                <option value="K">Black</option>
+                <option value="D">Blonde</option>
+                <option value="A">Red-Brown</option>
+            </select>
+
+            <label asp-for="Demographic.AgeAtDeath">Age at Death (range)</label>
+            <input asp-for="Demographic.AgeAtDeath" readonly />
+            <label asp-for="Demographic.AgeAtDeathMin">"Estimated Min Age at Death" /</label>
+            <input asp-for="Demographic.AgeAtDeathMin" />
+            <label asp-for="Demographic.AgeAtDeathMax">"Estimated Max Age at Death" </label>
+            <input asp-for="Demographic.AgeAtDeathMax"  />
+            <label asp-for="Demographic.AgeMethod">Age at Death Method</label>
+            <input asp-for="Demographic.AgeMethod"  />
+            <label asp-for="Demographic.Height">Height</label>
+            <input asp-for="Demographic.Height" />
+            <button type="submit">Add New Demographic</button><br /> <br />
+
+        }
+
+
+
+
+    </form>
+</div>

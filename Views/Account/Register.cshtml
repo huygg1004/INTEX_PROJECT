@@ -1,0 +1,37 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model RegisterBindingModel
+<!-- Page Header -->
+<header class="masthead" style="background-image: url('https://images2.minutemediacdn.com/image/upload/c_crop,h_1350,w_2400,x_0,y_340/v1571260067/shape/mentalfloss/603939-mummy_of_ukhhotep_son_of_hedjpu_met_dt11561.jpg?itok=UbK68ffp') ">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-10 mx-auto">
+                <div class="site-heading">
+                    <h1>BYU Fag el-Gamous Excavation Site</h1>
+                    <span class="subheading">Register a new Account</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+<!--Main Content-->
+<div class="container"> 
+    <div class="row">
+        <form asp-action="Register" method="post">
+            <label asp-for="Email">Email Address</label>
+            <input asp-for="Email" />
+            <label asp-for="Password">Password</label>
+            <input asp-for="Password" />
+            <label asp-for="ConfirmPassword">Confirm Password</label>
+            <input asp-for="ConfirmPassword" />
+            <button type="submit">Sign Up</button><br /> <br />
+            <div asp-validation-summary="All"></div>
+        </form>
+    </div>
+</div>

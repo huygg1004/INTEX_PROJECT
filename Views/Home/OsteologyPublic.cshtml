@@ -1,0 +1,95 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{ ViewBag.Title = "View Burial Site For Public Users"; }
+
+@*@model IEnumerable<Intex_app.Models.LocationMeasurement>*@
+@model IndexViewModel
+
+<header class="masthead" style="background-image: url('https://www.thoughtco.com/thmb/ZLRhlJDCgHvg9rOzmU_b0DR5P9Y=/768x0/filters:no_upscale():max_bytes(150000):strip_icc()/DigitalVision.-skeletonsovertime-5c77129446e0fb00019b8d27.jpg') ">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-10 mx-auto">
+                <div class="site-heading">
+                    <h1>Osteology Data</h1>
+                    <span class="subheading">For General Users</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div>
+
+    <div class="container">
+
+
+        @*<div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+            <div class="post-preview">*@
+
+        <h2>View Data Osteological</h2>
+
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Burial ID</th>
+
+                    <th>BasilarSuture</th>
+
+                    <th>VentralArc</th>
+
+                    <th>SubpubicAngle</th>
+
+                    <th>SciaticNotch</th>
+
+                    <th>ForemanMagnum</th>
+
+                    <th>BoneLength</th>
+
+                    <th>Osteophytosis</th>
+
+                    <th>ToothAttrition</th>
+
+                    <th>ToothEruption</th>
+
+
+
+                </tr>
+            </thead>
+
+            @*displaying the actual submitted information*@
+            <tbody>
+                @foreach (var x in Model.Osteologies)
+                {
+                    <tr>
+                        <td>@x.Id</td>
+                        <td>@x.BasilarSuture</td>
+                        <td>@x.VentralArc</td>
+                        <td>@x.SubpubicAngle</td>
+                        <td>@x.SciaticNotch</td>
+                        <td>@x.ForemanMagnum</td>
+                        <td>@x.BoneLength</td>
+                        <td>@x.Osteophytosis</td>
+                        <td>@x.ToothAttrition</td>
+                        <td>@x.ToothEruption</td>
+                    </tr>
+                }
+
+
+            </tbody>
+        </table>
+ 
+        <div page-info="@Model.PageNumberingInfo" page-classes-enabled="true" page-class="btn"
+             page-class-normal="btn-outline-dark" page-class-selected="btn-danger">
+        </div>
+        <br />
+
+    </div>
+</div>
+@*</main>
+            </div>
+        </div>
+    </div>*@

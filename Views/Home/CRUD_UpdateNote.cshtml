@@ -1,0 +1,70 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@model Intex_app.Models.ArtifactBioNote
+
+<h1>Update Artifice Biological Note Information</h1>
+
+<form method="post">
+    <div>
+        <label asp-for="Id">Burial ID</label>
+        <input type="text" asp-for="Id" />
+    </div>
+    <div>
+        <label asp-for="Rack">Rack</label>
+        <input type="text" asp-for="Rack" />
+    </div>
+    <div>
+        <label asp-for="ArtifactFound">ArtifactFound</label>
+        <input type="text" asp-for="ArtifactFound" />
+    </div>
+    <div>
+        <label asp-for="ArtifactDescription">LowNs</label>
+        <input type="text" asp-for="ArtifactDescription" />
+    </div>
+    <div>
+        <label asp-for="SampleTaken">SampleTaken</label>
+        <input type="text" asp-for="SampleTaken" />
+    </div>
+    <div>
+        <label asp-for="BioNotes">BioNotes</label>
+        <input type="text" asp-for="BioNotes" />
+    </div>
+    <div>
+        <label asp-for="AdditionalNotes">AdditionalNotes</label>
+        <input type="text" asp-for="AdditionalNotes" />
+    </div>
+    <div>
+        <label asp-for="FaceBundle">FaceBundle</label>
+        <input type="text" asp-for="FaceBundle" />
+    </div>
+    <div>
+        <label asp-for="PathologyAnomalies">PathologyAnomalies</label>
+        <input type="text" asp-for="PathologyAnomalies" />
+    </div>
+    <div>
+        <label asp-for="BurialWraping">BurialWraping</label>
+        <input type="text" asp-for="BurialWraping" />
+    </div>
+    <div>
+        <label asp-for="PreservationIndex">PreservationIndex</label>
+        <input type="text" asp-for="PreservationIndex" />
+    </div>
+    <div>
+        <label asp-for="CreatedBy">CreatedBy</label>
+        <input type="text" asp-for="CreatedBy" />
+    </div>
+    <div>
+        <label asp-for="LastModifiedBy">FeetSouth</label>
+        <input type="text" asp-for="LastModifiedBy" />
+    </div>
+
+
+    <button type="submit">Update Note</button>
+</form>
+<br />
+
+<div asp-validation-summary="All"></div>

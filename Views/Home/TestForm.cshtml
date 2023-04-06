@@ -1,0 +1,13 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<form asp-action="TestForm" method="post">
+    <label name="test">Test</label>
+    <input name="test" type="text" />
+    <input hidden name="username" value = @User.Identity.Name />
+    <button type="submit">Sweet</button><br /> <br />
+    <div asp-validation-summary="All"></div>
+</form>

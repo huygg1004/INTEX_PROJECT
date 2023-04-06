@@ -1,0 +1,133 @@
+﻿@model ArtifactViewModel
+
+<header class="masthead" style="background-image: url('https://cdn.vietnambiz.vn/171464876016439296/2020/4/22/demographic-survey-1024x546-15875521749521145778897.jpg') ">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-10 mx-auto">
+                <div class="site-heading">
+                    <h1>Edit Artifact Data</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div class="container">
+    <form asp-action="EditArtifactBio" method="post">
+
+
+        <h3>Artifact Bio Note</h3>
+
+        @if (Model.Identifier != null)
+        {
+            <input asp-for="Identifier" hidden value="@Model.Identifier" />
+            <input asp-for="ArtifactBioNote.CreatedBy" hidden value="@Model.ArtifactBioNote.CreatedBy" />
+
+            <div class="form-group">
+                <label asp-for="ArtifactBioNote.Rack">Rack</label>
+                <input class="form-control" type="text" asp-for="ArtifactBioNote.Rack" value="@Model.ArtifactBioNote.Rack" />
+            </div>
+            <div class="form-group">
+                <label asp-for="ArtifactBioNote.ArtifactFound">ArtifactFound</label>
+                <input class="form-control" type="text" asp-for="ArtifactBioNote.ArtifactFound" value="@Model.ArtifactBioNote.ArtifactFound" />
+            </div>
+            <div class="form-group">
+                <label asp-for="ArtifactBioNote.ArtifactDescription">LowNs</label>
+                <input class="form-control" type="text" asp-for="ArtifactBioNote.ArtifactDescription" value="@Model.ArtifactBioNote.ArtifactDescription" />
+            </div>
+            <div class="form-group">
+                <label asp-for="ArtifactBioNote.SampleTaken">SampleTaken</label>
+                <input class="form-control" type="text" asp-for="ArtifactBioNote.SampleTaken" value="@Model.ArtifactBioNote.SampleTaken" />
+            </div>
+            <div class="form-group">
+                <label asp-for="ArtifactBioNote.BioNotes">BioNotes</label>
+                <textarea class="form-control" asp-for="ArtifactBioNote.BioNotes" value="@Model.ArtifactBioNote.BioNotes"></textarea>
+            </div>
+            <div class="form-group">
+                <label asp-for="ArtifactBioNote.AdditionalNotes">AdditionalNotes</label>
+                <textarea class="form-control" type="text" asp-for="ArtifactBioNote.AdditionalNotes" value="@Model.ArtifactBioNote.AdditionalNotes" />
+            </div>
+            <div class="form-group">
+                <label asp-for="ArtifactBioNote.FaceBundle">FaceBundle</label>
+                <input class="form-control" type="text" asp-for="ArtifactBioNote.FaceBundle" value="@Model.ArtifactBioNote.FaceBundle" />
+            </div>
+            <div class="form-group">
+                <label asp-for="ArtifactBioNote.PathologyAnomalies">PathologyAnomalies</label>
+                <input class="form-control" type="text" asp-for="ArtifactBioNote.PathologyAnomalies" value="@Model.ArtifactBioNote.PathologyAnomalies" />
+            </div>
+            <div class="form-group">
+                <label asp-for="ArtifactBioNote.BurialWraping">Burial Wrapping</label>
+                <input class="form-control" type="text" asp-for="ArtifactBioNote.BurialWraping" value="@Model.ArtifactBioNote.BurialWraping" />
+            </div>
+            <div class="form-group">
+                <label asp-for="ArtifactBioNote.PreservationIndex">PreservationIndex</label>
+                <input class="form-control" type="text" asp-for="ArtifactBioNote.PreservationIndex" value="@Model.ArtifactBioNote.PreservationIndex" />
+            </div>
+
+            <button type="submit">Update Artifact Bio Report</button><br /> <br />
+        }
+        else
+        {
+            @*this is the first time it is being created last modified and created are the same person*@
+            <input asp-for="ArtifactBioNote.LastModifiedBy" hidden value="@User.Identity.Name" />
+            @*keep the created information the same*@
+            <input asp-for="ArtifactBioNote.CreatedBy" hidden value="@User.Identity.Name" />
+
+            <div class="form-group">
+                <label asp-for="ArtifactBioNote.Rack">Rack</label>
+                <input class="form-control" type="text" asp-for="ArtifactBioNote.Rack" />
+            </div>
+            <div class="form-group">
+                <label asp-for="ArtifactBioNote.ArtifactFound">ArtifactFound</label>
+                <input class="form-control" type="text" asp-for="ArtifactBioNote.ArtifactFound" />
+            </div>
+            <div class="form-group">
+                <label asp-for="ArtifactBioNote.ArtifactDescription">LowNs</label>
+                <input class="form-control" type="text" asp-for="ArtifactBioNote.ArtifactDescription" />
+            </div>
+            <div class="form-group">
+                <label asp-for="ArtifactBioNote.SampleTaken">SampleTaken</label>
+                <input class="form-control" type="text" asp-for="ArtifactBioNote.SampleTaken" />
+            </div>
+            <div class="form-group">
+                <label asp-for="ArtifactBioNote.BioNotes">BioNotes</label>
+                <textarea class="form-control" type="text" asp-for="ArtifactBioNote.BioNotes"></textarea>
+            </div>
+            <div class="form-group">
+                <label asp-for="ArtifactBioNote.AdditionalNotes">AdditionalNotes</label>
+                <textarea class="form-control" type="text" asp-for="ArtifactBioNote.AdditionalNotes" />
+            </div>
+            <div class="form-group">
+                <label asp-for="ArtifactBioNote.FaceBundle">FaceBundle</label>
+                <input class="form-control" type="text" asp-for="ArtifactBioNote.FaceBundle" />
+            </div>
+            <div class="form-group">
+                <label asp-for="ArtifactBioNote.PathologyAnomalies">PathologyAnomalies</label>
+                <input class="form-control" type="text" asp-for="ArtifactBioNote.PathologyAnomalies" />
+            </div>
+            <div class="form-group">
+                <label asp-for="ArtifactBioNote.BurialWraping">Burial Wrapping</label>
+                <input class="form-control" type="text" asp-for="ArtifactBioNote.BurialWraping" />
+            </div>
+            <div class="form-group">
+                <label asp-for="ArtifactBioNote.PreservationIndex">PreservationIndex</label>
+                <input class="form-control" type="text" asp-for="ArtifactBioNote.PreservationIndex" />
+            </div>
+
+            <button type="submit">Add Artifact Bio Report</button><br /> <br />
+        }
+        @if (Model != null)
+        {
+            <input asp-for="ArtifactBioNote.LastModifiedBy" hidden value="@User.Identity.Name" />
+        }
+        else
+        {
+            @*this is the first time it is being created last modified and created are the same person*@
+            <input asp-for="ArtifactBioNote.LastModifiedBy" hidden value="@User.Identity.Name" />
+            @*keep the created information the same*@
+            <input asp-for="ArtifactBioNote.CreatedBy" hidden value="@User.Identity.Name" />
+        }
+        <div asp-validation-summary="All"></div>
+    </form>
+</div>

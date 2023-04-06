@@ -1,0 +1,94 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{ ViewBag.Title = "View Burial Site For Public Users"; }
+
+@*@model IEnumerable<Intex_app.Models.LocationMeasurement>*@
+@model IndexViewModel
+
+<header class="masthead" style="background-image: url('https://cdn.vietnambiz.vn/171464876016439296/2020/4/22/demographic-survey-1024x546-15875521749521145778897.jpg') ">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-10 mx-auto">
+                <div class="site-heading">
+                    <h1>Demographic Data</h1>
+                    <span class="subheading">For Research Users</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div>
+
+    <div class="container">
+
+
+        @*<div class="row">
+            <div class="col-lg-8 col-md-10 mx-auto">
+                <div class="post-preview">*@
+
+        <h2>View Data Demographic</h2>
+
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Burial ID</th>
+
+                    <th>Sex</th>
+
+                    <th>SexGe</th>
+
+                    <th>HairColor</th>
+
+                    <th>AgeAtDeath</th>
+
+                    <th>AgeMethod</th>
+
+                    <th>Height</th>
+
+                    <th>AgeAtDeathMin</th>
+
+                    <th>AgeAtDeathMax</th>
+
+
+
+
+
+                </tr>
+            </thead>
+
+            @*displaying the actual submitted information*@
+            <tbody>
+                @foreach (var x in Model.DemographicsR)
+                {
+                    <tr>
+                        <td>@x.Id</td>
+                        <td>@x.Sex</td>
+                        <td>@x.SexGe</td>
+                        <td>@x.HairColor</td>
+                        <td>@x.AgeAtDeath</td>
+                        <td>@x.AgeMethod</td>
+                        <td>@x.Height</td>
+                        <td>@x.AgeAtDeathMin</td>
+                        <td>@x.AgeAtDeathMax</td>
+                    </tr>
+                }
+
+
+            </tbody>
+        </table>
+
+        <div page-info="@Model.PageNumberingInfo" page-classes-enabled="true" page-class="btn"
+             page-class-normal="btn-outline-dark" page-class-selected="btn-danger">
+        </div>
+        <br />
+
+    </div>
+</div>
+@*</main>
+            </div>
+        </div>
+    </div>*@

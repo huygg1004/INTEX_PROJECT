@@ -1,0 +1,102 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@model Intex_app.Models.LocationMeasurement
+
+<h1>Update Burial Site Information</h1>
+
+<form  method="post">
+    <div>
+        <label asp-for="Nors">Nors</label>
+        <input type="text" asp-for="Nors" />
+    </div>
+    <div>
+        <label asp-for="HighNs">HighNs</label>
+        <input type="text" asp-for="HighNs" />
+    </div>
+    <div>
+        <label asp-for="LowNs">LowNs</label>
+        <input type="text" asp-for="LowNs" />
+    </div>
+    <div>
+        <label asp-for="Eorw">Eorw</label>
+        <input type="text" asp-for="Eorw" />
+    </div>
+    <div>
+        <label asp-for="HighEw">HighEw</label>
+        <input type="text" asp-for="HighEw" />
+    </div>
+    <div>
+        <label asp-for="LowEw">LowEw</label>
+        <input type="text" asp-for="LowEw" />
+    </div>
+    <div>
+        <label asp-for="Square">Square</label>
+        <input type="text" asp-for="Square" />
+    </div>
+    <div>
+        <label asp-for="BurialNum">Burial Num</label>
+        <input type="text" asp-for="BurialNum" />
+    </div>
+    <div>
+        <label asp-for="Direction">Direction</label>
+        <input type="text" asp-for="Direction" />
+    </div>
+    <div>
+        <label asp-for="Depth">Depth</label>
+        <input type="text" asp-for="Depth" />
+    </div>
+    <div>
+        <label asp-for="HeadSouth">HeadSouth</label>
+        <input type="text" asp-for="HeadSouth" />
+    </div>
+    <div>
+        <label asp-for="FeetSouth">FeetSouth</label>
+        <input type="text" asp-for="FeetSouth" />
+    </div>
+    <div>
+        <label asp-for="HeadWest">HeadWest</label>
+        <input type="text" asp-for="HeadWest" />
+    </div>
+    <div>
+        <label asp-for="FeetWest">FeetWest</label>
+        <input type="text" asp-for="FeetWest" />
+    </div>
+    <div>
+        <label asp-for="BurialLength">BurialLength</label>
+        <input type="text" asp-for="BurialLength" />
+    </div>
+    <div>
+        <label asp-for="DiscoveryDay">DiscoveryDay</label>
+        <input type="text" asp-for="DiscoveryDay" />
+    </div>
+    <div>
+        <label asp-for="DiscoveryMonth">DiscoveryMonth</label>
+        <input type="text" asp-for="DiscoveryMonth" />
+    </div>
+    <div>
+        <label asp-for="DiscoveryYear">DiscoveryYear</label>
+        <input type="text" asp-for="DiscoveryYear" />
+    </div>
+    <div>
+        <label asp-for="Cluster">Cluster</label>
+        <input type="text" asp-for="Cluster" />
+    </div>
+    <div>
+        <label asp-for="BurialRack">BurialRack</label>
+        <input type="text" asp-for="BurialRack" />
+    </div>
+    <div>
+        <label asp-for="CreatedBy">CreatedBy</label>
+        <input type="text" asp-for="CreatedBy" />
+    </div>
+
+
+    <button type="submit">Update Data</button>
+</form>
+<br />
+
+<div asp-validation-summary="All"></div>

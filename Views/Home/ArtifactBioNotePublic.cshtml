@@ -1,0 +1,96 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{ ViewBag.Title = "View Burial Site For Public Users"; }
+
+@*@model IEnumerable<Intex_app.Models.LocationMeasurement>*@
+@model IndexViewModel
+
+<header class="masthead" style="background-image: url('https://img.timviec.com.vn/2020/04/biology-la-gi2.jpg') ">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-10 mx-auto">
+                <div class="site-heading">
+                    <h1>Artifact Biology Data</h1>
+                    <span class="subheading">For General Users</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div>
+
+    <div class="container">
+
+
+        @*<div class="row">
+            <div class="col-lg-8 col-md-10 mx-auto">
+                <div class="post-preview">*@
+
+        <h2>View Data Artifact Bio Notes</h2>
+
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Burial ID</th>
+
+                    <th>Rack</th>
+
+                    <th>ArtifactFound</th>
+
+                    <th>ArtifactDescription</th>
+
+                    <th>SampleTaken</th>
+
+                    <th>BioNotes</th>
+
+                    <th>AdditionalNotes</th>
+
+                    <th>FaceBundle</th>
+
+                    <th>PathologyAnomalies</th>
+
+                    <th>BurialWraping</th>
+
+                    <th>PreservationIndex</th>
+
+                </tr>
+            </thead>
+
+            @*displaying the actual submitted information*@
+            <tbody>
+                @foreach (var x in Model.ArtifactBioNotes)
+                {
+                <tr>
+                    <td>@x.Id</td>
+                    <td>@x.Rack</td>
+                    <td>@x.ArtifactFound</td>
+                    <td>@x.ArtifactDescription</td>
+                    <td>@x.SampleTaken</td>
+                    <td>@x.BioNotes</td>
+                    <td>@x.AdditionalNotes</td>
+                    <td>@x.FaceBundle</td>
+                    <td>@x.PathologyAnomalies</td>
+                    <td>@x.BurialWraping</td>
+                    <td>@x.PreservationIndex</td>
+                </tr>
+                }
+
+
+            </tbody>
+        </table>
+
+        <div page-info="@Model.PageNumberingInfo" page-classes-enabled="true" page-class="btn"
+             page-class-normal="btn-outline-dark" page-class-selected="btn-danger">
+        </div>
+        <br />
+
+    </div>
+</div>
+@*</main>
+            </div>
+        </div>
+    </div>*@

@@ -1,0 +1,57 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@model Photo
+
+<header class="masthead" style="background-image: url('https://christineelder.com/wp-content/uploads/2016/10/king-tut-adobe-1080x632.jpg') ">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-10 mx-auto">
+                <div class="site-heading">
+                    <h1>BYU Fag el-Gamous Burial Information</h1>
+                    <span class="subheading">View, Add and Edit Information</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+
+            <div class="container">
+                <div class="row">
+                    <h1>Upload a Photo</h1>
+                </div>
+
+                <div class="row">
+                    <form method="post" enctype="multipart/form-data" asp-action="PhotoSave">
+                        <div>
+                            <label asp-for="uploadphoto">Photo Upload Here</label>
+                            <input type="file" asp-for="uploadphoto" />
+                        </div>
+                        <div>
+                            <label asp-for="PhotoID">PhotoID</label>
+                            <input type="text" asp-for="PhotoID" />
+                        </div>
+                        <br />
+                        <div>
+                            <label asp-for="BurialSiteID">Burial Site ID</label>
+                            <input type="text" asp-for="BurialSiteID" />
+                        </div>
+
+                        <button class="btn-danger" type="submit">upload</button>
+
+
+                        @*<input asp-page-handler="Upload" class="btn-danger" type="submit" value="Upload" />*@
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

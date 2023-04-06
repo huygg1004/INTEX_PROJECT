@@ -1,0 +1,37 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{ ViewBag.Title = "View Burial Site For Public Users"; }
+
+@*@model IEnumerable<Intex_app.Models.LocationMeasurement>*@
+
+@model IEnumerable<Intex_app.Models.Photo>
+
+<header class="masthead" style="background-image: url('https://live-production.wcms.abc-cdn.net.au/66aba074f24d01a88fdc35f062219677?impolicy=wcms_crop_resize&cropH=608&cropW=1080&xPos=0&yPos=55&width=862&height=485') ">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-10 mx-auto">
+                <div class="site-heading">
+                    <h1>View Photos</h1>
+                    <span class="subheading">Your Uploaded Photos will be displayed here</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+
+            @foreach (Intex_app.Models.Photo x in Model)
+            {
+                <h3>@x.PhotoID.</h3>
+                <h3>@x.BurialSiteID</h3>
+                <img src="@x.photoUrl" width="300" height="300" />
+            }
+        </div>
+    </div>
+</div>

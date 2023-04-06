@@ -1,0 +1,95 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{ ViewBag.Title = "View Burial Site For Public Users"; }
+
+@*@model IEnumerable<Intex_app.Models.LocationMeasurement>*@
+@model IndexViewModel
+
+<header class="masthead" style="background-image: url('https://cdn-ol.niceshops.com/upload/image/product/facebook/default/europet-skull-head-1-st-138290-en.jpg') ">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-10 mx-auto">
+                <div class="site-heading">
+                    <h1>Osteology Skull Data</h1>
+                    <span class="subheading">For Research Users</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div>
+
+    <div class="container">
+
+
+        @*<div class="row">
+            <div class="col-lg-8 col-md-10 mx-auto">
+                <div class="post-preview">*@
+
+        <h2>View Data Osteological Skull</h2>
+
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Burial ID</th>
+
+                    <th>MaxCranialLength</th>
+
+                    <th>MaxCranialBreadth</th>
+
+                    <th>BasionBregmaHeight</th>
+
+                    <th>BasionNasion</th>
+
+                    <th>InterorbitalBreadth</th>
+
+                    <th>BizygomaticDiameter</th>
+
+                    <th>OrbitEdge</th>
+
+                    <th>Robust</th>
+
+                    <th>SkullTrauma</th>
+
+
+
+                </tr>
+            </thead>
+
+            @*displaying the actual submitted information*@
+            <tbody>
+                @foreach (var x in Model.OsteologySkullsR)
+                {
+                    <tr>
+                        <td>@x.Id</td>
+                        <td>@x.MaxCranialLength</td>
+                        <td>@x.MaxCranialBreadth</td>
+                        <td>@x.BasionBregmaHeight</td>
+                        <td>@x.BasionNasion</td>
+                        <td>@x.InterorbitalBreadth</td>
+                        <td>@x.BizygomaticDiameter</td>
+                        <td>@x.OrbitEdge</td>
+                        <td>@x.Robust</td>
+                        <td>@x.SkullTrauma</td>
+                    </tr>
+                }
+
+
+            </tbody>
+        </table>
+
+        <div page-info="@Model.PageNumberingInfo" page-classes-enabled="true" page-class="btn"
+             page-class-normal="btn-outline-dark" page-class-selected="btn-danger">
+        </div>
+        <br />
+
+    </div>
+</div>
+@*</main>
+            </div>
+        </div>
+    </div>*@

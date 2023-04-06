@@ -1,0 +1,260 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@model LocationMeasurementViewModel
+
+<header class="masthead">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-10 mx-auto">
+                <div class="site-heading">
+                    <h1>BYU Fag el-Gamous Excavation Site</h1>
+                    <span class="subheading">Intex Application</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div class="container">
+    <form asp-action="LocationMeasurement" method="post">
+
+
+
+        <h3>Location Measurement</h3>
+        @if (Model.Identifier != null)
+        {
+            @*if the model is not blank, then we are dealing with an update request, and we need the ID to know what to update*@
+            <input asp-for="Identifier" hidden value="@Model.Identifier" />
+            <input asp-for="LocationMeasurement.CreatedBy" hidden value="@Model.LocationMeasurement.CreatedBy" />
+            <label asp-for="LocationMeasurement.Nors">NORS</label>
+            <select asp-for="LocationMeasurement.Nors" value="@Model.LocationMeasurement.Nors">
+                <option value="">--Select One--</option>
+                <option value="N">North</option>
+                <option value="S">South</option>
+            </select>
+            <label asp-for="LocationMeasurement.LowNs">Low North or South Number</label>
+            <select asp-for="LocationMeasurement.LowNs" value="@Model.LocationMeasurement.LowNs">
+                <option value="">--Select One--</option>
+                <option value=0>0</option>
+                <option value=10>10</option>
+                <option value=20>20</option>
+                <option value=30>30</option>
+                <option value=40>40</option>
+                <option value=50>50</option>
+                <option value=60>60</option>
+                <option value=70>70</option>
+                <option value=80>80</option>
+                <option value=90>90</option>
+                <option value=100>100</option>
+                <option value=110>110</option>
+                <option value=120>120</option>
+                <option value=130>130</option>
+                <option value=140>140</option>
+                <option value=150>150</option>
+                <option value=160>160</option>
+                <option value=170>170</option>
+                <option value=180>180</option>
+                <option value=190>190</option>
+                <option value=200>200</option>
+            </select>
+            <br />
+            <label asp-for="LocationMeasurement.Eorw">EORW</label>
+            <select asp-for="LocationMeasurement.Eorw" value="@Model.LocationMeasurement.Eorw">
+                <option value="">--Select One--</option>
+                <option value="E">East</option>
+                <option value="W">West</option>
+            </select>
+            <label asp-for="LocationMeasurement.LowEw">Low East or West Number</label>
+            <select asp-for="LocationMeasurement.LowEw" value="@Model.LocationMeasurement.LowEw">
+                <option value="">--Select One--</option>
+                <option value=0>0</option>
+                <option value=10>10</option>
+                <option value=20>20</option>
+                <option value=30>30</option>
+                <option value=40>40</option>
+                <option value=50>50</option>
+                <option value=60>60</option>
+                <option value=70>70</option>
+                <option value=80>80</option>
+                <option value=90>90</option>
+                <option value=100>100</option>
+                <option value=110>110</option>
+                <option value=120>120</option>
+                <option value=130>130</option>
+                <option value=140>140</option>
+                <option value=150>150</option>
+                <option value=160>160</option>
+                <option value=170>170</option>
+                <option value=180>180</option>
+                <option value=200>200</option>
+            </select>
+            <br />
+            <label asp-for="LocationMeasurement.Square">Square</label>
+            <select asp-for="LocationMeasurement.Square" value="@Model.LocationMeasurement.Square">
+                <option value="NE">NE</option>
+                <option value="NW">NW</option>
+                <option value="SE">SE</option>
+                <option value="SW">SW</option>
+            </select>
+            <label asp-for="LocationMeasurement.BurialNum">Burial Number</label>
+            <input asp-for="LocationMeasurement.BurialNum" value="@Model.LocationMeasurement.BurialNum" />
+            <label asp-for="LocationMeasurement.Direction">Direction</label>
+            <select asp-for="LocationMeasurement.Direction" value="@Model.LocationMeasurement.Direction">
+                <option value="">--Select One--</option>
+                <option value="E">East</option>
+                <option value="W">West</option>
+            </select>
+            <br />
+            <label asp-for="LocationMeasurement.Depth">Depth</label>
+            <input asp-for="LocationMeasurement.Depth" value="@Model.LocationMeasurement.Depth" /><br />
+            <label asp-for="LocationMeasurement.HeadSouth">HeadSouth</label>
+            <input asp-for="LocationMeasurement.HeadSouth" value="@Model.LocationMeasurement.HeadSouth" /><br />
+            <label asp-for="LocationMeasurement.FeetSouth">FeetSouth</label>
+            <input asp-for="LocationMeasurement.FeetSouth" value="@Model.LocationMeasurement.FeetSouth" /><br />
+            <label asp-for="LocationMeasurement.HeadWest">HeadWest</label>
+            <input asp-for="LocationMeasurement.HeadWest" value="@Model.LocationMeasurement.HeadWest" /><br />
+            <label asp-for="LocationMeasurement.FeetWest">FeetWest</label>
+            <input asp-for="LocationMeasurement.FeetWest" value="@Model.LocationMeasurement.FeetWest" /><br />
+            <label asp-for="LocationMeasurement.BurialLength">BurialLength</label>
+            <input asp-for="LocationMeasurement.BurialLength" value="@Model.LocationMeasurement.BurialLength" /><br />
+            <label asp-for="LocationMeasurement.DiscoveryDay">DiscoveryDay</label>
+            <input asp-for="LocationMeasurement.DiscoveryDay" value="@Model.LocationMeasurement.DiscoveryDay" /><br />
+            <label asp-for="LocationMeasurement.DiscoveryMonth">DiscoveryMonth</label>
+            <input asp-for="LocationMeasurement.DiscoveryMonth" value="@Model.LocationMeasurement.DiscoveryMonth" /><br />
+            <label asp-for="LocationMeasurement.DiscoveryYear">DiscoveryYear</label>
+            <input asp-for="LocationMeasurement.DiscoveryYear" value="@Model.LocationMeasurement.DiscoveryYear" /><br />
+            <label asp-for="LocationMeasurement.Cluster">Cluster</label>
+            <input asp-for="LocationMeasurement.Cluster" value="@Model.LocationMeasurement.Cluster" /><br />
+            <label asp-for="LocationMeasurement.BurialRack">BurialRack</label>
+            <input asp-for="LocationMeasurement.BurialRack" value="@Model.LocationMeasurement.BurialRack" />
+        }
+        <button type="submit">Update Location</button><br /> <br />
+        @if (Model != null)
+        {
+
+            @*change last edited to current user*@
+            <input asp-for="LocationMeasurement.LastModifiedBy" hidden value="@User.Identity.Name" />
+            @*keep the created information the same*@
+        }
+        else
+        {
+            @*this is the first time it is being created last modified and created are the same person*@
+            <input asp-for="LocationMeasurement.LastModifiedBy" hidden value="@User.Identity.Name" />
+            @*keep the created information the same*@
+            <input asp-for="LocationMeasurement.CreatedBy" hidden value="@User.Identity.Name" />
+
+            @*if it's blank then the user who creates this form will be the creator *@
+            <input asp-for="LocationMeasurement.CreatedBy" hidden value="@User.Identity.Name" />
+            <label asp-for="LocationMeasurement.Nors">NORS</label>
+            <select asp-for="LocationMeasurement.Nors">
+                <option value="">--Select One--</option>
+                <option value="N">North</option>
+                <option value="S">South</option>
+            </select>
+            <label asp-for="LocationMeasurement.LowNs">Low North or South Number</label>
+            <select asp-for="LocationMeasurement.LowNs">
+                <option value="">--Select One--</option>
+                <option value=0>0</option>
+                <option value=10>10</option>
+                <option value=20>20</option>
+                <option value=30>30</option>
+                <option value=40>40</option>
+                <option value=50>50</option>
+                <option value=60>60</option>
+                <option value=70>70</option>
+                <option value=80>80</option>
+                <option value=90>90</option>
+                <option value=100>100</option>
+                <option value=110>110</option>
+                <option value=120>120</option>
+                <option value=130>130</option>
+                <option value=140>140</option>
+                <option value=150>150</option>
+                <option value=160>160</option>
+                <option value=170>170</option>
+                <option value=180>180</option>
+                <option value=190>190</option>
+                <option value=200>200</option>
+            </select>
+            <br />
+            <label asp-for="LocationMeasurement.Eorw">EORW</label>
+            <select asp-for="LocationMeasurement.Eorw">
+                <option value="">--Select One--</option>
+                <option value="E">East</option>
+                <option value="W">West</option>
+            </select>
+            <label asp-for="LocationMeasurement.LowEw">Low East or West Number</label>
+            <select asp-for="LocationMeasurement.LowEw">
+                <option value="">--Select One--</option>
+                <option value=0>0</option>
+                <option value=10>10</option>
+                <option value=20>20</option>
+                <option value=30>30</option>
+                <option value=40>40</option>
+                <option value=50>50</option>
+                <option value=60>60</option>
+                <option value=70>70</option>
+                <option value=80>80</option>
+                <option value=90>90</option>
+                <option value=100>100</option>
+                <option value=110>110</option>
+                <option value=120>120</option>
+                <option value=130>130</option>
+                <option value=140>140</option>
+                <option value=150>150</option>
+                <option value=160>160</option>
+                <option value=170>170</option>
+                <option value=180>180</option>
+                <option value=200>200</option>
+            </select>
+            <br />
+            <label asp-for="LocationMeasurement.Square">Square</label>
+            <select asp-for="LocationMeasurement.Square">
+                <option value="NE">NE</option>
+                <option value="NW">NW</option>
+                <option value="SE">SE</option>
+                <option value="SW">SW</option>
+            </select>
+            <label asp-for="LocationMeasurement.BurialNum">Burial Number</label>
+            <input asp-for="LocationMeasurement.BurialNum" />
+            <label asp-for="LocationMeasurement.Direction">Direction</label>
+            <select asp-for="LocationMeasurement.Direction">
+                <option value="">--Select One--</option>
+                <option value="E">East</option>
+                <option value="W">West</option>
+            </select>
+            <br />
+            <label asp-for="LocationMeasurement.Depth">Depth</label>
+            <input asp-for="LocationMeasurement.Depth" /><br />
+            <label asp-for="LocationMeasurement.HeadSouth">HeadSouth</label>
+            <input asp-for="LocationMeasurement.HeadSouth" /><br />
+            <label asp-for="LocationMeasurement.FeetSouth">FeetSouth</label>
+            <input asp-for="LocationMeasurement.FeetSouth" /><br />
+            <label asp-for="LocationMeasurement.HeadWest">HeadWest</label>
+            <input asp-for="LocationMeasurement.HeadWest" /><br />
+            <label asp-for="LocationMeasurement.FeetWest">FeetWest</label>
+            <input asp-for="LocationMeasurement.FeetWest" /><br />
+            <label asp-for="LocationMeasurement.BurialLength">BurialLength</label>
+            <input asp-for="LocationMeasurement.BurialLength" /><br />
+            <label asp-for="LocationMeasurement.DiscoveryDay">DiscoveryDay</label>
+            <input asp-for="LocationMeasurement.DiscoveryDay" /><br />
+            <label asp-for="LocationMeasurement.DiscoveryMonth">DiscoveryMonth</label>
+            <input asp-for="LocationMeasurement.DiscoveryMonth" /><br />
+            <label asp-for="LocationMeasurement.DiscoveryYear">DiscoveryYear</label>
+            <input asp-for="LocationMeasurement.DiscoveryYear" /><br />
+            <label asp-for="LocationMeasurement.Cluster">Cluster</label>
+            <input asp-for="LocationMeasurement.Cluster" /><br />
+            <label asp-for="LocationMeasurement.BurialRack">BurialRack</label>
+            <input asp-for="LocationMeasurement.BurialRack" />
+            <button type="submit">Add New Location</button><br /> <br />
+
+        }
+
+        <div asp-validation-summary="All"></div>
+    </form>
+</div>

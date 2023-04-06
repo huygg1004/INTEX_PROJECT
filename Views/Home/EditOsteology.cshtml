@@ -1,0 +1,125 @@
+﻿@model OsteologyViewModel
+
+<header class="masthead" style="background-image: url('https://cdn.vietnambiz.vn/171464876016439296/2020/4/22/demographic-survey-1024x546-15875521749521145778897.jpg') ">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-10 mx-auto">
+                <div class="site-heading">
+                    <h1>Edit Osteology Data</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div class="container">
+    <form asp-action="EditOsteology" method="post">
+
+
+        <h3>Osteology Report</h3>
+        @if (Model.Identifier != null)
+        {
+            <input asp-for="Identifier" hidden value="@Model.Identifier" />
+            <input asp-for="Osteology.CreatedBy" hidden value="@Model.Osteology.CreatedBy" />
+
+            <div class="form-group">
+                <label asp-for="Osteology.BasilarSuture">Basilar Suture</label>
+                <input class="form-control" asp-for="Osteology.BasilarSuture" value="@Model.Osteology.BasilarSuture" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Osteology.VentralArc">Ventral Arc</label>
+                <input class="form-control" asp-for="Osteology.VentralArc" value="@Model.Osteology.VentralArc" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Osteology.SubpubicAngle">Subpubic Angle</label>
+                <input class="form-control" asp-for="Osteology.SubpubicAngle" value="@Model.Osteology.SubpubicAngle" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Osteology.SciaticNotch">Sciatic Notch</label>
+                <input class="form-control" asp-for="Osteology.SciaticNotch" value="@Model.Osteology.SciaticNotch" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Osteology.ForemanMagnum">Foreman Magnum</label>
+                <input class="form-control" asp-for="Osteology.ForemanMagnum" value="@Model.Osteology.ForemanMagnum" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Osteology.BoneLength">Bone Length</label>
+                <input class="form-control" asp-for="Osteology.BoneLength" value="@Model.Osteology.BoneLength" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Osteology.Osteophytosis">Osteophytosis</label>
+                <input class="form-control" asp-for="Osteology.Osteophytosis" value="@Model.Osteology.Osteophytosis" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Osteology.ToothAttrition">Tooth Attrition</label>
+                <input class="form-control" asp-for="Osteology.ToothAttrition" value="@Model.Osteology.ToothAttrition" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Osteology.ToothEruption">Tooth Eruption</label>
+                <input class="form-control" asp-for="Osteology.ToothEruption" value="@Model.Osteology.ToothEruption" />
+            </div>
+
+            <button type="submit">Update Osteology Report</button><br /> <br />
+        }
+        else
+        {
+            @*this is the first time it is being created last modified and created are the same person*@
+            <input asp-for="Osteology.LastModifiedBy" hidden value="@User.Identity.Name" />
+            @*keep the created information the same*@
+            <input asp-for="Osteology.CreatedBy" hidden value="@User.Identity.Name" />
+
+            <div class="form-group">
+                <label asp-for="Osteology.BasilarSuture">Basilar Suture</label>
+                <input class="form-control" asp-for="Osteology.BasilarSuture" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Osteology.VentralArc">Ventral Arc</label>
+                <input class="form-control" asp-for="Osteology.VentralArc" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Osteology.SubpubicAngle">Subpubic Angle</label>
+                <input class="form-control" asp-for="Osteology.SubpubicAngle" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Osteology.SciaticNotch">Sciatic Notch</label>
+                <input class="form-control" asp-for="Osteology.SciaticNotch" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Osteology.ForemanMagnum">Foreman Magnum</label>
+                <input class="form-control" asp-for="Osteology.ForemanMagnum" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Osteology.BoneLength">Bone Length</label>
+                <input class="form-control" asp-for="Osteology.BoneLength" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Osteology.Osteophytosis">Osteophytosis</label>
+                <input class="form-control" asp-for="Osteology.Osteophytosis" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Osteology.ToothAttrition">Tooth Attrition</label>
+                <input class="form-control" asp-for="Osteology.ToothAttrition" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Osteology.ToothEruption">Tooth Eruption</label>
+                <input class="form-control" asp-for="Osteology.ToothEruption" />
+            </div>
+
+            <button type="submit">Add New Osteology Report</button><br /> <br />
+        }
+        @if (Model != null)
+        {
+            <input asp-for="Osteology.LastModifiedBy" hidden value="@User.Identity.Name" />
+        }
+        else
+        {
+            @*this is the first time it is being created last modified and created are the same person*@
+            <input asp-for="Osteology.LastModifiedBy" hidden value="@User.Identity.Name" />
+            @*keep the created information the same*@
+            <input asp-for="Osteology.CreatedBy" hidden value="@User.Identity.Name" />
+        }
+
+        <div asp-validation-summary="All"></div>
+    </form>
+</div>

@@ -1,0 +1,10 @@
+﻿@model IEnumerable<LocationMeasurement>
+
+<a class="btn btn-block btn-outline-secondary"
+   asp-action="Index" asp-controller="Home" asp-route-id="">Home</a>
+</br>
+
+@foreach (var x in Model)
+{
+    <a asp-action="Index" asp-controller="Home" asp-route-id="@x.Id">@x.Square</a><br />
+}
